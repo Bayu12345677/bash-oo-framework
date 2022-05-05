@@ -13,7 +13,7 @@ exec::date(){
 			echo "date +${type}"
 		);
 	} || {
-		e="invalid or unreadable option"
+		e="invalid or unreadable option"; throw
 		return 1
 	}
 }
@@ -34,7 +34,7 @@ localtime::create(){
 	if [[ "$end" != End ]]; then
 #		echo "Error: Line (${BASH_LINENO[1]}|${BASH_SOURCE[0]})"
 #		echo "Error: Penutup tidak di temukan atau tidak di tulis"
-		e="cover is not found or not written"
+		e="cover is not found or not written"; throw
 		return 123
 	fi
 
