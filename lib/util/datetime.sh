@@ -38,10 +38,10 @@ localtime::create(){
 		return 123
 	fi
 
-	if [[ -z "$type_code" ]]; then
+	if [[ -z "$type_options" ]]; then
 		dummy=
 	else
-		kembalikan=$(echo "$type_code"|base64)
+		kembalikan=$(echo "$type_options"|base64)
 	fi; echo "Dcr: $kembalikan"
 }
 
